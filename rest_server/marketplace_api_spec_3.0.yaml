@@ -7,7 +7,7 @@ tags:
   - name: User
   - name: Candidate
 paths:
-  /items:
+  /api/items:
     post:
       tags:
         - Item
@@ -58,7 +58,7 @@ paths:
                 items:
                   $ref: "#/components/schemas/MarketplaceItemRes"
 
-  /items/{itemId}:
+  /api/items/{itemId}:
     parameters:
       - name: itemId
         in: path
@@ -104,7 +104,7 @@ paths:
           description: OK
         404:
           $ref: "#/components/responses/404NotFound"
-  /items/{itemId}/description:
+  /api/items/{itemId}/description:
     parameters:
       - name: itemId
         in: path
@@ -141,7 +141,7 @@ paths:
         405:
           $ref: "#/components/responses/InvalidInput"
 
-  /items/{itemId}/status:
+  /api/items/{itemId}/status:
     parameters:
       - name: itemId
         in: path
@@ -166,7 +166,7 @@ paths:
         405:
           $ref: "#/components/responses/InvalidInput"
 
-  /items/{itemId}/submits:
+  /api/items/{itemId}/submits:
     parameters:
       - name: itemId
         in: path
@@ -176,14 +176,14 @@ paths:
     put:
       tags:
         - Item
-      summary: Increase submits of a marketplace item 
+      summary: Increase submits of a marketplace item
       responses:
         200:
           description: OK
         404:
           $ref: "#/components/responses/404NotFound"
 
-  /items/{itemId}/starUsers:
+  /api/items/{itemId}/starUsers:
     get:
       tags:
         - Item
@@ -206,7 +206,7 @@ paths:
         404:
           $ref: "#/components/responses/404NotFound"
 
-  /users:
+  /api/users:
     post:
       tags:
         - User
@@ -240,7 +240,7 @@ paths:
                 items:
                   $ref: "#/components/schemas/User"
 
-  /users/{username}/starItems:
+  /api/users/{username}/starItems:
     get:
       tags:
         - User
@@ -262,7 +262,7 @@ paths:
                   $ref: "#/components/schemas/MarketplaceItemRes"
         404:
           $ref: "#/components/responses/404NotFound"
-  /users/{username}/starItems/{itemId}:
+  /api/users/{username}/starItems/{itemId}:
     parameters:
       - name: username
         in: path

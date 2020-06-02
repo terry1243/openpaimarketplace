@@ -13,11 +13,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.text({ type: 'text/plain' }));
 app.use(cors());
 
-app.get('/', function(req, res) {
+app.get('/api', function(req, res) {
   res.send('Welcome to marketplace!');
 });
 
-app.use('/', router);
+app.use('/api', router);
 
 app.listen(process.env.PORT, function() {
   console.log(`Marketplace service listening on port ${process.env.PORT}!`);
